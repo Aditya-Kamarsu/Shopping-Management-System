@@ -1,4 +1,3 @@
-//core java code for Items package
 //creating package
 package items;
 
@@ -109,8 +108,12 @@ class Changing
 		}
 	}
 	//adding new item
-	void addItem(int item_id,String item_name,double rate){
-		
+	void addItem(){
+		int item_id;
+		// Inputiting the Item Id to be inserted
+		System.out.println("Enter the Item id : ");
+		Scanner sc = new Scanner(System.in);
+		item_id = sc.nextInt();
 		// Checking for the duplicate Item id's
 		if(itls.itms.containsKey(item_id)){  
 		try{
@@ -119,12 +122,16 @@ class Changing
 		
 		catch(InvalidItno ex){
 			System.out.println(ex.getMessage());
+			// Terminating if the Item no already exists
+			System.exit(0);
 		}
 		}
 		
-		// If the Item doesnt exists
+		// If the Item Id doesnt exists
 		else{
-			
+			String item_name;
+			System.out.println("Enter the Item Name :");
+			item_name = sc.next();
 		Iterator itr=itls.itms.entrySet().iterator();
 		boolean flag = true;
 		while(itr.hasNext())
@@ -140,14 +147,20 @@ class Changing
 				}
 				catch(InvalidItno ex){
 					System.out.println(ex.getMessage());
+					// Terminating if the Item name already exists
+					System.exit(0);
 				}
 				break;
 			}
 		}
 		
 		// If the Item name is unique add it 
-		if(flag)
+		if(flag){
+			double rate;
+			System.out.println("Enter the Item Price : ");
+			rate = sc.nextDouble();
 			itls.itms.put(item_id,new Item(item_id,item_name,rate));
+		}
 		}
 	}
 	
@@ -162,42 +175,16 @@ class Changing
 			 }
 			 catch(InvalidItno ex){
 				 System.out.println(ex.getMessage());
+				 // Terminating if the Item Id already exists 
+				 System.exit(0);
 			 }
 		}
 		else
 			itls.itms.remove(item_id);
 	}
-	//checking item exists or not
-	boolean itemExists(int id)
-	{
-		Item it=itls.itms.get(id);
-		if(it==null)
-			return false;
-		else
-			return true;
-	}
-	//displaying the item
-	void displayItem(int id)
-	{
-		try
-		{
-			Item it=itls.itms.get(id);
-			if(it==null)
-				throw new InvalidItno("The item doesnot exists");
-			else
-			{
-				System.out.println("The item number is "+it.getItno());
-				System.out.println("The item name is "+it.getItname());
-				System.out.println("The item rate is "+it.getRate());
-			}
-		}
-		catch(InvalidItno e)
-		{
-			System.out.println(e.getMessage());
-		}
-	}
 	
 }
+
 /*
 class Items
 {
