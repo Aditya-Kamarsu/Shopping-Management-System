@@ -5,22 +5,83 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invoice</title>
+    <link rel="stylesheet" href="invoice.css">
 </head>
 <body>
-    <h1>Thanks For Ordering</h1>
-    <header>
-        <div id="ord">
-            <h4>Your Bill: 12000 Rs</h4>
-            Download Invoice Here: <br>
-            <a href="invoice.txt" download="invoice.txt">
-                <img src="inv.jpg" alt="Invoice" width="104" height="132" >
-            </a>
+    <div class="invhead">
+        Invoice
+    </div>
+    <div class="adr">
+           Arnav Chester,<br>
+           402 Street Avenue <br>
+           Road no 8b 500032 <br>
+           Hyderabad India 
+    </div>
+    <h2>
+        CoMake<span>IT</span> 
+    </h2>
+<center>
+    <div id="container">
+        <div id="id">
+            Item Id
         </div>
-    </header>
-    <script>
-        function print(){
-            window.print(invoice.txt);
-        }
-    </script>
+        <div id="Name">
+            Item Name
+        </div>
+        <div id="Quant">
+            Quantity
+        </div>
+        <div id="Price">
+            Price
+        </div>
+       <div id="cont">
+        <p style="margin-left: 40px;">101</p>
+        <p style="margin-left: 144px;">T Shirt</p>
+        <p style="margin-left: 175px;">5</p>
+        <p style="margin-left: 132px;margin-right: 20px;">2500</p>
+    <!-- Slippers-->
+           <p style="margin-left: 10px;">105</p>
+           <p style="margin-left: 120px;">Men Slippers</p>
+           <p style="margin-left: 136px;">2</p>
+           <p style="margin-left: 133px; margin-right: 1px;">300</p> <br>
+    
+    <!-- Sun Glasses-->
+           <p style="margin-left: 40px;">106</p>
+           <p style="margin-left: 130px;">Sun-Glasses</p>
+           <p style="margin-left: 136px;">5</p>
+           <p style="margin-left: 132px; margin-right: 1px;">2000</p> <br>
+    
+           <!-- Shoes-->
+           <p style="margin-left: 40px;">104</p>
+           <p style="margin-left: 155px;">Shoes</p>
+           <p style="margin-left: 170px;">2</p> 
+           <p style="margin-left: 132px; margin-right: 1px;">2400</p> <br>
+    
+           <!--Watches-->
+           <p style="margin-left: 40px;">102</p>
+           <p style="margin-left: 145px;">Watch</p>
+           <p style="margin-left: 175px;">2</p>
+           <p style="margin-left: 132px; margin-right: 1px;">4000</p> <br>
+    
+        
+           <hr>
+           <p style="margin-left: 260px;">Total Bill</p>
+           <p style="margin-left: 20px;">Rs. 11,200</p>
+       </div>
+       </div> <br>
+       
+       <button onclick="down()" id="btn">
+        <img src="download.gif" alt="Download Button" width="50px">
+    </button>
+      </center>
+   
+  <script>
+      function down(){
+        document.getElementById("btn").style.display = "none";
+          window.print();
+          document.getElementById("btn").style.display = "block";
+      }
+      
+  </script>
 </body>
 </html>
