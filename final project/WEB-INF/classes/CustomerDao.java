@@ -98,11 +98,11 @@ public class CustomerDao{
 		}catch(Exception e){
 			System.out.println(e);
 		}return l;
-	}public static boolean login(String mobile,String password) throws Exception{
+	}public static boolean login(String name,String password) throws Exception{
 		try{
 			Connection con=CustomerDao.getConnection();
-			PreparedStatement ps=con.prepareStatement("select * from Customers where mobile=? and password=?");
-			ps.setString(1,mobile);
+			PreparedStatement ps=con.prepareStatement("select * from Customers where name=? and password=?");
+			ps.setString(1,name);
 			ps.setString(2,password);
 			ResultSet rs=ps.executeQuery();
 			if(rs.next()){
