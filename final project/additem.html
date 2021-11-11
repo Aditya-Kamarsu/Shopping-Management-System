@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add-Item</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        input:focus{
+            background-color: rgb(200, 250, 250);
+        }
+
+        body
+        {
+            background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(http://discovertemplate.com/wp-content/uploads/2020/12/DT_G71_Online-Shopping-Animated-GIF-Icon-pack-1.gif);
+        }
+    </style>
+</head>
+<body>
+<form name="ad" action="AddItem" method="post">
+    <center >
+        <div  style="width: 500px; height: 550px; margin-top: 200px;padding-top: 50px; border: 1px solid black; background-color:  #ebf2ff;" id="img">
+            <span style="font-size: 50px; font-weight: bolder;">Add Item</span>
+            <br>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert" style="display: none; width: 75%;">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="dismiss">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            <br>
+			
+            <table>
+                <tr>
+                    <td>
+                        <span style="color: black; font-weight: bold; font-size: 30px;">
+                            Item Name: </span>
+                    </td>
+                    <td>
+                        <input type="text" id="itname" name="itname" required style="height: 30px; border: 2px solid black;"><br>
+            
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <span style="color: black; font-weight: bold; font-size: 30px;">
+                            Item Price: </span>
+                    </td>
+                    <td>
+                        <input type="text" id="itprice" name="itprice" required style="height: 30px; border: 2px solid black;"><br>
+         
+                    </td>
+                </tr>
+            </table>
+            <br><br>
+             <!--input type="submit" value="submit" onclick="validate()"/-->
+			 <a href="removeitem.html">click me</a>
+            <button type="button" class="btn btn-info" onclick="validate()">Submit</button>
+        </div>
+    </center>
+	</form>
+    <script>
+    function validate()
+    {
+      var c=2;
+      var itname=document.getElementById("itname").value;
+      var itprice=document.getElementById("itprice").value;
+      if(!itname)
+      {
+          console.log("Hello");
+          document.getElementById("alert").style.display="block";
+        document.getElementById("alert").innerHTML="Item name cannot be Empty";
+         c--;
+      }
+      else if(itprice.length==0)
+      {
+        document.getElementById("alert").style.display="block";
+        document.getElementById("alert").innerHTML="Item Price cannot be Empty";
+         c--;
+      }
+      if(c==2)
+      {
+                        Swal.fire({
+              
+                title: "Do You Want to add the Item? ",
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, Add it!'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire(
+                    'Hurray!',
+                    'Your Details are Stored',
+                    'success'
+                    );
+					document.forms.ad.submit();
+                }
+				
+                });
+      }
+    }
+    </script>
+</body>
+</html>
