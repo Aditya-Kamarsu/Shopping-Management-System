@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    
+    <title>Document</title>
+    <style>
+        body{
+            font-family: "Merriweather", sans-serif;
+            background-color: #ebf2ff;
+            
+            transition: 0.5s;
+        }
+        .topnav {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            background-color: #f9fafc;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+            0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            z-index: 9999;
+            position: fixed;
+
+        }
+        .topnav a {
+            display: block;
+            color: tomato;
+            text-align: center;
+            margin-bottom:0%;
+            padding: 18px 10px;
+            text-decoration: none;
+            font-size: 17px;
+            float: left;
+            height:64px;
+            font-weight: bold;
+            
+        }
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+            text-shadow: black;
+        }
+        .topnav #home{
+            float: left;
+        }
+        .topnav #carto{
+            float: right;
+        }
+        .sidenav a{
+            display: block;
+        }
+        .sidenav{
+            background: linear-gradient(#ff512f 0%,#dd2476 51%,#ff512f 100%);
+            
+            width: auto;
+            height: 100%;
+            padding-top: 11.5%;
+            display: flex;
+            position: fixed;
+        }
+        .sidenav a {
+            display: block;
+            color: white;
+            text-align: left;
+            padding: 10px 10px 10px 1px;
+            font-weight: bold;
+            font-size: 15px;
+            text-decoration: none;
+            
+        }
+        .sidenav a:hover {
+            background-color: #ddd;
+            color: black;
+            text-shadow: black;
+        }
+        .frame{
+            width: 100%;  
+            height: 854px;  
+            object-fit: cover;  
+            margin-left: 0;
+            margin-right: 0%;
+            border: 5px solid black;
+            margin-top: 1%;
+            padding-right: 0%;
+        }
+        .dropdown{
+            right: 0;
+            border: 1px solid black;
+            
+        } .btn{
+            background-image: linear-gradient(to left,#ff512f 0%,#dd2476 51%,#ff512f 100%);
+        } 
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            right: 1%;
+        }
+        .content{
+            top: 6.8%;
+            
+            left: 6.5%;
+            width: auto;
+            
+        }
+        #bt1{
+     position:relative;
+     margin-left: 91%;
+     right:5px;
+     bottom: 5px;
+     width:150px;
+     height:40px;
+     background: linear-gradient(#ff512f 0%,#dd2476 51%,#ff512f 100%);
+     border:3px;
+     color: azure;
+   }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body >
+    <nav class="topnav" id="myTopnav">
+        <a href="#home" id="carto" style="padding: 0%;"><img src="logo.jpg" alt="Logo" height="64px" width="64px"></a>
+        <a href="#home" id="home" style="float:left;">Home</a>
+        <div style="float:left;font-weight: bold;font-style: italic;font-size: 25px; color: coral; width: 400px; margin: 0 auto;position: relative;"> Shopping Management System</div>
+         
+        <div class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;font-weight: bolder;border: solid;">
+              Profile
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="UserDashBoard.html">Home</a></li>
+                <li><a class="dropdown-item" href="logoutservlet">Logout</a></li>
+              </ul>
+              
+          </div>
+          &nbsp;<a href="cart.html" id="carto"style="padding: 0%;"><img src="cart.jpg" alt="Logo" height="64px" width="80px"></a>
+          <div style="right: 0;">
+            &nbsp;<a href="#home" style="padding: 0%;"><img src="comlog.png" alt="Logo" height="64px" width="80px"></a>
+            </div>
+    </nav>
+    <nav class="sidenav">
+        <ul class="list-unstyled components">
+            <li class="active">
+                <a href="electronics.html" class="baritem" target="ff">Electrical</a>
+            </li>
+            <li>
+                <a href="cloth.html" class="baritem" target="ff">Clothing</a>
+            </li>
+            <li>
+                <a href="homedec.html" class="baritem" target="ff">Home Decors</a>
+            </li>
+            <li>
+                <a href="footwear.html" class="baritem" target="ff">Foot Wear</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="content" style="padding-top: 50px;padding-left: 108px;">
+        <iframe class="frame" name="ff"></iframe>
+        <button id="bt1" onclick="swealert()" >Move To Cart</button>
+      </div>
+      <script>
+          function swealert(){
+  Swal.fire({
+  title: 'Do you want to move to cart?',
+  showDenyButton: true,
+  showCancelButton: true,
+  confirmButtonText: 'Yes',
+  denyButtonText: 'No',
+}).then((result) => {
+  if (result.isConfirmed) {
+    addEventListener("click",navigate());
+  } else if (result.isDenied) {
+    Swal.fire('Changes are not saved', '', 'info')
+  }
+});
+          }
+function navigate(){
+  window.location.href="cart.html";
+}
+      </script>
+</body>
+</html>

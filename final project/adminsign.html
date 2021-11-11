@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>Admin-Signin</title>
+        <style>
+            body{
+                background-image: linear-gradient(
+                    to right,
+                    #ff512f 0%,
+                    #dd2476 51%,
+                    #ff512f 100%
+                );
+                padding-top: 70px;
+                padding-left: 50px;
+            }
+            .tab1{
+                max-width: 100%;
+                max-height: 100%;
+            }
+            input{
+                border-radius: 10px;
+                font-size: 15px;
+            }
+            p{
+                color: azure;
+                font-size: 30px;
+            }
+            a{
+                text-decoration: none;
+                color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <form id="adminform" name="admfrm" method="POST" action="adminloginservlet">
+            <table class="tab1">
+                <tr>
+                    <td colspan="2">
+                        <p><b>Signing in as Admin....</b></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="text" name="name" id="uname" placeholder="enter userid"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="password" name="pass" id="pass" placeholder="enter password"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="reset" value="clear"/>
+                    </td>
+                    <td>
+                        <input type="submit" value="login" onclick()="demo.html"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <script>
+            document.getElementById("adminform").addEventListener("submit",validate);
+            function validate()
+            {
+                event.preventDefault();
+                var uname=document.getElementById("uname").value;
+                var pass=document.getElementById("pass").value;
+                var regpass=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+                if(uname=="" || uname.trim()=="")
+                {
+                    alert("username cannot be empty");
+                }
+                else if(regpass.test(pass)==false)
+                {
+                    alert("invalid password");
+                }
+                else
+                {
+                    //alert("Login successfull")  
+                    alert("Pasword chusko ra Lucha");
+                    document.forms.admfrm.submit();         //admin dashboard here.
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style type="text/css">
+    
+    body{
+        overflow:auto;
+        font-family: "Merriweather", sans-serif;
+        background-color: #ebf2ff;
+        
+    }
+    div.header{
+        width:100%;
+        overflow:hidden;
+        height:60px;
+        border:1px solid black;
+        margin-right: 0px;
+        background-image: linear-gradient(
+                
+                #ff512f 0%,
+                #dd2476 51%,
+                #ff512f 100%
+                );
+       
+    }
+    a,h3{
+        float:left;
+    }
+    a{
+        text-decoration: none;
+        color:black;
+    }
+    
+    div.content{
+        background-color: #ebf2ff;
+        width:100%;
+        height:auto;
+        overflow:auto;
+       
+    }
+	
+	
+    th{
+        color:50px solid grey;
+        text-align: center;
+    }
+    #footer{
+	border:1px solid black;
+	width:100%;
+	height:auto;
+    overflow:auto;
+    position:absolute;
+    bottom:0px;
+    background-image: linear-gradient(
+                
+                #ff512f 0%,
+                #dd2476 51%,
+                #ff512f 100%
+                );
+	}
+    @media  screen and (max-width:1025px){
+        table{
+            width:100%;
+        }
+        td,th{
+            padding:5px;
+        }
+    }
+    
+    @media only screen and (min-width:1025px){
+        table{
+            width:100%;
+
+        }
+        
+        td,th{
+        padding:20px;
+        text-align:center;
+        }
+    }
+    #proceed{
+        position:absolute;
+        bottom:5px;
+        overflow:hidden;
+        right:0px;
+        width:auto;
+        height:auto;
+		border:0px;
+		font-weight:bold;
+        background-color: #ebf2ff;
+
+    }
+    #proceed:hover{
+        background-color:white;
+    }
+	h2{
+	text-align:center;
+	}
+	#valid{
+	color:blue;
+	}
+    table{
+        overflow:auto;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    </style>
+    
+</head>
+<body>
+    
+    <div class="header">
+            <a href="UserDashBoard.html"><h3>Back</h3> &nbsp; </a><h2 id="align"><img src="cart.jpg" width=30px height=30px/> User Cart</h2>
+    
+    </div>
+    <div class="content">
+    <table border=1px cellspacing=0px solid grey>
+        <tr>
+            <th> Item Id</th>
+            <th> Item Name </th>
+            <th> Item Quantity</th>
+			<th> Each Price</th>
+            <th> Total Price</th>
+        </tr>
+        <tr>
+            <td>101</td>
+            <td>
+			T-shirt
+            </td>
+            <td name="q">5</td>
+            <td name="p">500</td>
+			<td name="t"></td>
+        </tr>
+        <tr>
+            <td>105</td>
+            <td>Men Slippers</td>
+            <td name="q">2</td>
+            <td name="p">150</td>
+			<td name="t"></td>
+        </tr>
+        <tr>
+            <td>106</td>
+            <td>Sun-Glasses</td>
+            <td name="q">5</td>
+            <td name="p">400</td>
+			<td name="t"></td>
+        </tr>
+        <tr>
+            <td>102</td>
+            <td>Shoes</td>
+            <td name="q">2</td>
+            <td name="p">1200</td>
+			<td name="t"></td>
+        </tr>
+        <tr>
+            <td>104</td>
+            <td>Watch</td>
+            <td name="q">2</td>
+            <td name="p">2000</td>
+			<td name="t"></td>
+        </tr>
+
+    </table>
+	<br/>
+	<br/>
+	<h2>Have Coupon?&nbsp;<input type="text" id="coupon"/><input type="button" value="Apply" id="Apply"/><span id="valid"></span></h2>
+	</div>
+	<div id="footer">
+    <h2>
+	<span id="payable"></span><br/>
+	<span id="savings"></span><br/>
+    </h2>
+    <form action="billing.html">
+        <button type="button" onclick="swealert()" id="proceed">proceed to payment</button>
+    </form>
+    
+    </div>
+    
+    <script type="text/javascript">
+	var total=0;
+	var p=document.getElementsByName("p");
+	var q=document.getElementsByName("q");
+	var t=document.getElementsByName("t");
+	var i;
+	for(i=0;i<p.length;i++){
+	t[i].innerHTML=parseInt(p[i].innerHTML)*parseInt(q[i].innerHTML);
+	total+=parseInt(t[i].innerHTML);
+	}
+	document.getElementById("payable").innerHTML="Total Payable: "+total;
+    document.getElementById("savings").innerHTML="Total Savings: 0";
+	document.getElementById("Apply").addEventListener("click",discount);
+	function discount(){
+	var coupon=document.getElementById("coupon").value;
+	if(coupon=="revanth"){
+	document.getElementById("valid").innerHTML="<br/><br/>Hurray! Coupon Applied successfully(20%)";
+	document.getElementById("payable").innerHTML="Total Payable: "+(0.8*total);
+	document.getElementById("savings").innerHTML="Total Savings: "+(0.2*total);
+	}
+	else{
+	document.getElementById("payable").innerHTML="Total Payable: "+total;
+	document.getElementById("savings").innerHTML="Total Savings: 0";
+	document.getElementById("valid").innerHTML="<br/><br/>Invalid Coupon or Expired";
+	}
+	}
+    function swealert(){
+  Swal.fire({
+  title: 'Do you want to move to Payment Page ?',
+  showDenyButton: true,
+  showCancelButton: true,
+  confirmButtonText: 'Yes',
+  denyButtonText: 'No',
+}).then((result) => {
+  if (result.isConfirmed) {
+    addEventListener("click",navigate());
+  } else if (result.isDenied) {
+    Swal.fire('&#128532;', '', '')
+  }
+});
+          }
+function navigate(){
+  window.location.href="billing.html";
+}
+	
+
+    </script>
+
+
+
+    
+</body>
+</html

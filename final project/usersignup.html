@@ -1,0 +1,164 @@
+<html>
+    <head>
+        <title>signup</title>
+        <style>
+             body{
+                background-image: url("bgimg.jpg");
+            }
+            p{
+                color: black;
+                font-size: 30px;
+            }
+            input,button,textarea{
+                border-radius: 10px;
+                font-size: 15px;
+            }
+            form{
+                background-image: linear-gradient(
+                    to right,
+                    #ff512f 0%,
+                    #dd2476 51%,
+                    #ff512f 100%
+                );
+                padding-top: 70px;
+                padding-left: 50px;
+                border-radius: 10px;
+            }
+            b{
+                font-size: 20px;
+            }
+            #sub{
+                text-decoration: none;
+                color: black;
+            }
+            #signup{
+                background-color: #ebf2ff;
+                padding: 10px;
+                position: fixed;
+                top: 200px;
+                left: 300px;
+                width: 500px;
+                height: 550px;
+                border-radius: 10px;
+                box-shadow: 10px 10px 10px gray;
+            }
+            .logo{
+                margin-left: 200px;
+                width: 100px;
+                height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="signup">
+            <img class="logo" src="logo.jpg">
+            <br><br>
+            <form name="signform" action="saveservlet" method="post">
+                <table>
+                    <tr>
+                        <td>
+                            <p>Signup form for customer....</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="name" id="uname" placeholder="enter name"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="mail" class="email" placeholder="enter email"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="password" name="pass" id="pass" placeholder="enter password"/>
+                        </td>
+                        <td rowspan="5">
+                            <ul>
+                                <li>Password should have 8-15 characters long along with</li>
+                                <li>1 numberic digit</li>
+                                <li>1 uppercase letter</li>
+                                <li>1 lowercase letter</li>
+                                <li>1 special character</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="password" id="conpass" placeholder="confirm password"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="contact" id="phone" placeholder="enter phone number"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <textarea rows="5" name="address" id="address" cols="25" placeholder="enter address"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="reset" value="clear"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input id="sub" type="submit" value="register"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Already have account!<a href="main.html">signin</a></b>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <script>
+            document.getElementById("sub").addEventListener("click",validate);
+            function validate()
+            {
+                event.preventDefault();
+                var uname=document.getElementById("uname").value;
+                var pass=document.getElementById("pass").value;
+                var conpass=document.getElementById("conpass").value;
+                var phone=document.getElementById("phone").value;
+                var address=document.getElementById("address").value;
+                var regphone=/^[789]\d{9}$/;
+                var regpass=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+                
+                var email=document.querySelector(".email").value;
+                var regemail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+                if(uname=="" || uname.trim()=="")
+                {
+                    alert("username cannot be empty");
+                }
+                else if(regemail.test(email)==false)
+                {
+                    alert("invalid email");
+                }
+                else if(regpass.test(pass)==false)
+                {
+                    alert("invalid password");
+                }
+                else if(pass!=conpass)
+                {
+                    alert("confirm password and password not matching")
+                }
+                else if(regphone.test(phone)==false)
+                {
+                    alert("invalid phone number");
+                }
+                else
+                {
+                    alert("registration successfull");
+                    document.forms.signform.submit();
+                             //user dashboard here.
+                }
+            }
+        </script>
+    </body>
+</html>
+                    
+                    
+                    

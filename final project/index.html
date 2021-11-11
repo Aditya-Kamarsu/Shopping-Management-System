@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHOPPING</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather:300,300italic,regular,italic,700,700italic,900,900italic"
+      rel="stylesheet"
+    />
+    
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="navbar__brand">
+          <img src="logo.jpg" alt="shop_logo" class="brand__logo" />
+        </div>
+        <div style="float:left;font-weight: bold;font-style: italic;font-size: 25px; color: coral; width: 400px; margin: 0 auto;position: relative;"> Shopping Management System</div>
+        <div class="navbar__nav__items">
+          <div class="nav__item">
+            <button class="button__primary hide__mobile" ><a style="text-decoration: none; color: white;" href="main.html">Shop Now</a></button>
+            <button
+              class="button__primary update__menu mobile__only"
+              id="menu_item"
+            >
+              
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container">
+      <section class="hero__container">
+        <div class="hero__image__container">
+          <img src="hero.jpg" alt="hero image" class="hero__image" />
+          <img
+            src="heroShape.svg"
+            alt="hero image shape"
+            class="hero__image__shape"
+          />
+          <img
+            src="herobgpattren.svg"
+            alt="hero image shape"
+            class="hero__image__pattren"
+          />
+        </div>
+        <div class="hero__description">
+          <h1 class="hero__text">
+            Shop your favourite items now!!.
+          </h1>
+          <button class="button__primary"><a style="text-decoration: none; color: white;" href="main.html">Shop Now</a></button>
+        </div>
+      </section>
+
+      <section class="item__list__container">
+        <h1 class="text-xl">Explore Our Menu..</h1>
+        <div class="item__list__container__diagonal"></div>
+
+        <div class="item__menu__card__list">
+          <div class="item__menu__card">
+            <img
+              src="boypic.jpg"
+              alt="menswear"
+              class="item__menu__card__image"
+            />
+            <div class="item__menu__card__details">
+              <h4 class="text-lg"><strong>Men's wear</strong></h4>
+              <p>
+                shirt , Pant , T-shirt
+                <span style="color: red">+3</span>
+              </p>
+            </div>
+          </div>
+          <div class="item__menu__card item__menu__card__move__up">
+            <img
+              src="girlpic.jpg"
+              alt="ladieswear"
+              class="item__menu__card__image"
+            />
+            <div class="item__menu__card__details">
+              <h4 class="text-lg"><strong>Ladies wear</strong></h4>
+              <p>
+                shirt , Pant , T-shirt
+                <span style="color: red">+3</span>
+              </p>
+            </div>
+          </div>
+          <div class="item__menu__card">
+            <img
+              src="kids.png"
+              alt="kidswear"
+              class="item__menu__card__image"
+            />
+            <div class="item__menu__card__details">
+              <h4 class="text-lg"><strong>Kids wear</strong></h4>
+              <p>
+                Toys , shoes , dolls
+                <span style="color: red">+3</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="item__list__view__more">View More..</div>
+      </section>
+      <section class="shopping__list__container">
+        <div class="shopping__list__text">
+          <h4 class="text-xl">You have plenty of products to order!!.</h4>
+        </div>
+        <div class="shopping__list__images__container">
+          <div class="shopping__list__row_1">
+            <div>
+              <img
+                src="pic1.png"
+                alt="shopping1"
+                class="shopping1"
+              />
+            </div>
+            <img
+              src="pic2.jpg"
+              alt="shopping2"
+              class="shopping2"
+            />
+          </div>
+          <div class="shopping__list__row_2">
+            <img
+              src="pic3.jpg"
+              alt="shopping3"
+              class="shopping3"
+            />
+            <img
+              src="pic4.jpg"
+              alt="shopping4"
+              class="shopping4"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="email__subcribe__container">
+        <div>
+          <h1 class="text-xl">Stay Updated Everyday!!</h1>
+          <div class="email__subcribe__input__field">
+            
+            <div>
+              <input
+                type="email"
+                placeholder="abc@email.com"
+                class="email__input" 
+                name="inp"
+              />
+              
+            </div>
+            <button class="button__primary" onclick="check()"> << Get Updates Here </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="quote__container">
+        <div class="quote_image_overlay"></div>
+        <h3 class="quote_image_text">
+          STAY HOME & SHOP ONLINE.<br> YOU'RE TOO PRETTY TO HAVE TO LOOK FOR A PARKING SPOT
+        </h3>
+      </section>
+    </main>
+    <footer>
+      <img class="footimage" src="comlog.png" alt="shop_logo" />
+      <ul>
+        <li><br></li>
+        <li><a style="text-decoration: none;">Pricing</a></li>
+        <li>Terms and conditions</li>
+        <li>Partnership</li>
+        <li>Career</li>
+        <li>Contact</li>
+      </ul>
+    </footer>
+    <script>
+      const mobileNavDropDown = document.querySelector(
+        ".mobile__navbar__items"
+      );
+      window.addEventListener("click", () => {
+        if (mobileNavDropDown.classList.contains("update__menu__close"))
+          return mobileNavDropDown.classList.remove("update__menu__close");
+        return mobileNavDropDown.classList.add("update__menu__close");
+      });
+      function check(){
+        var email=document.querySelector(".email__input").value;
+        var regemail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if(!regemail.test(email)){
+          Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Invalid Email!',
+        })
+        }    
+        else{
+          Swal.fire({
+          icon: 'success',
+          title: 'success...',
+          text: 'Hurray your updates will be sent soon!!!!',
+        })
+        }
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

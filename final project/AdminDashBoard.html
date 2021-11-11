@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: "Merriweather", sans-serif;
+            background-color: #ebf2ff;
+            overflow: auto;
+            transition: 0.5s;
+        }
+        
+        .topnav {
+            
+            
+            display: flex;
+            overflow: hidden;
+            align-items: center;
+            background-color: #f9fafc;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+            0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            z-index: 9999;
+                    
+        }
+        .topnav a {
+            display: flex;
+            position: relative;
+            color: tomato;
+            text-align: center;
+            margin-bottom:0%;
+            padding: 18px 10px;
+            text-decoration: none;
+            font-size: 20px;
+            float: left;
+            height:64px;
+            font-weight: bold;
+            
+        }
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+            text-shadow: black;
+        }
+        .topnav #home{
+            float: left;
+        }
+        .topnav #profile{
+            float: right;
+        }
+        .sidenav a{
+            display: block;
+        }
+        .sidenav{
+           
+            background-image: linear-gradient(
+                
+                #ff512f 0%,
+                #dd2476 51%,
+                #ff512f 100%
+                );
+            overflow: auto;
+            width: 100px;
+            height: 100%;
+            padding-top: 11.5%;
+            margin-right:0% ;
+            position: fixed;
+            z-index: 9999;
+        }
+        .sidenav a {
+            display: block;
+            color: white;
+            text-align: left;
+            padding: 10px 15px 15px 10px;
+            font-weight: bold;
+            font-size: 20px;
+            text-decoration: none;
+            
+            
+        }
+        .sidenav a:hover {
+            background-color: #ddd;
+            color: black;
+            text-shadow: black;
+        }
+        .div-frame{
+            width: 100%;  
+            height: 100%;  
+            object-fit: cover;  
+            margin-left: 100px;
+            margin-right: 10%;
+            border: 5px solid black;
+            position: fixed;
+        }
+        .dropbtn {
+            background-image: linear-gradient(
+                #ff512f 0%,
+                #dd2476 51%,
+                #ff512f 100%
+                );
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: fixed;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            right: auto;
+            left: auto;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            
+        }
+        .dropdown-content a:hover {
+            background-color: lightseagreen;
+            color: white;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        @media (max-width: 575.98px) {
+            body,.topnav,.sidenav,.div-frame{
+                display: block !important;
+            }
+        }
+        @media (max-width: 767.98px) {
+            body,.topnav,.sidenav,.div-frame{
+                display: block !important;
+            }
+        }
+        @media (max-width: 991.98px) { 
+            body,.topnav,.sidenav,.div-frame{
+                display: block !important;
+            }
+        }        
+        @media (max-width: 1199.98px) { 
+            body,.topnav,.sidenav,.div-frame{
+                display: block !important;
+            }
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>    
+</head>
+<body>
+    <nav class="topnav" id="myTopnav">
+        <a href="AdminDashBoard.html" style="padding: 0%;"><img src="logo.jpg" alt="Logo" height="64px" width="100px"></a>
+        <a href="AdminDashBoard.html" id="home" style="float: left;">Home</a>
+        
+        <div style="float:left;font-weight: bold;font-style: italic;font-size: 25px; color: coral; width: 400px; margin: 0 auto;position: relative;"> Shopping Management System</div>
+        <div class="dropdown">
+            <button class="dropbtn">Profile</button>
+            <div class="dropdown-content">
+              <a href="AdminDashBoard.html">Home</a>
+              <a href="adminlogoutservlet">Logout</a>
+            </div>
+          </div> 
+        <div style="right: 0;">
+            <a href="#home" style="padding: 0%;"><img src="comlog.png" alt="Logo" height="64px" width="80px"></a>
+        </div>
+        
+    </nav>
+    <nav class="sidenav">
+        <ul class="list-unstyled components">
+            <li class="active">
+                <a href="additem.html" target="myFrame">Add Item</a>   <!--- Add Item HTML ---> 
+            </li>
+            <li>
+                <a href="removeitem.html" target="myFrame">Remove Item</a> <!--- Rem Item HTML --->
+            </li>
+            <li>
+                <a href="adduser.html" target="myFrame">Add User</a> <!--- Add User HTML --->
+            </li>
+            <li>
+                <a href="removeuser.html" target="myFrame">Remove User</a> <!--- Rem User HTML --->
+            </li>
+            <li>
+                <a href="updateprice.html" target="myFrame">Update Price</a> <!--- Update Price HTML --->
+            </li>
+        </ul>
+    </nav>
+    <iframe class="div-frame" name="myFrame"src="defaultadmindb.html"></iframe>
+    
+</body>
+</html>

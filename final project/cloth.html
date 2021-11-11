@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clothing</title>
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        body {
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    
+        .column {
+          float: left;
+          width: 16.666%;
+          height:auto;
+          padding: 0 10px;
+        }
+        
+        .row {margin: 0 -5px;}
+        
+        .row:after {
+          content: "";
+          display: block;
+          clear: both;
+        }
+    
+        @media screen and (max-width: 600px) {
+          .column {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+          }
+        }
+        
+        /* Style the counter cards */
+        .card {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          padding: 16px;
+          text-align: center;
+          background-color: #f1f1f1;
+          overflow: auto;
+        }p::before{
+            content: "Price: ";
+        }
+        </style>
+        </head>
+        <body>
+        <div class="row">
+          <div class="column">
+            <div class="card">
+              <img src="boy.jpg" title="kids"><br/>
+              <p id="boy">2500</p>
+              <input type="number" id="it1" max="5" min="0" placeholder="0">
+            </div>
+          </div>
+        
+          <div class="column">
+            <div class="card">
+                <img src="girl.jpg" title="kidsg"><br/>
+               <p id="girl">3000</p>
+                <input type="number" id="it2" max="5" min="0" placeholder="0">
+            </div>
+          </div>
+          
+          <div class="column">
+            <div class="card">
+                <img src="shirt.jpg" title="menshirt"><br/>
+               <p id="mens">1500</p>
+                <input type="number" id="it3" max="5" min="0" placeholder="0">
+            </div>
+          </div>
+          
+          <div class="column">
+            <div class="card">
+              <img src="trouser.jpg" title="menpant"><br/>
+             <p id="menp">1800</p>
+              <input type="number" id="it4" max="5" min="0" placeholder="0">
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <img src="tradiwomen.jpg" title="women"><br/>
+             <p id="womentrad">10000</p>
+              <input type="number" id="it5" max="5" min="0" placeholder="0">
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <img src="womenoffi.jpg" title="women office"><br/>
+             <p id="womenoff">8500</p>
+              <input type="number" id="it6" max="5" min="0" placeholder="0">
+            </div>
+          </div>
+        </div>
+        
+        </body>
+        </html>
+        

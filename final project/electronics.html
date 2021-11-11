@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electronic and Electrical Appliances</title>
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        body {
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    
+        .column {
+          float: left;
+          width: 16.666%;
+          padding: 0 10px;
+        }
+        
+        .row {margin: 0 -5px;}
+        
+        .row:after {
+          content: "";
+          display: block;
+          clear: both;
+        }
+    
+        @media screen and (max-width: 600px) {
+          .column {
+            width: 100%;
+            display: block;
+            margin-bottom: 20px;
+          }
+        }
+        
+        /* Style the counter cards */
+        .card {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          padding: 16px;
+          text-align: center;
+          background-color: #f1f1f1;
+          overflow: auto;
+        }p::before{
+            content: "Price: ";
+        }
+        </style>
+        </head>
+        <body>
+        <div class="row">
+          <div class="column">
+            <div class="card">
+              <img src="Mobile.jpg" title="smartphone"><br/>
+            <p id="smart">25000</p>
+              <input type="number" id="it7" max="5" min="0" placeholder="0">
+            </div>
+          </div>
+        
+          <div class="column">
+            <div class="card">
+                <img src="Washingmachine.jpg" title="Washing Machines"><br/>
+              <p id="wm">50000</p>
+                <input type="number" id="it8" max="5" min="0" placeholder="0">
+            </div>
+          </div>
+          
+          <div class="column">
+            <div class="card">
+                <img src="TV.jpg" title="smart tv"><br/>
+            <p id="tv">150000</p>
+                <input type="number" id="it9" max="5" min="0" placeholder="0">
+            </div>
+          </div>
+          
+          <div class="column">
+            <div class="card">
+              <img src="Laptop.jpg" title="Laptop"><br/>
+             <p id="lappy">53000</p>
+              <input type="number" id="it10" max="5" min="0" placeholder="0">
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <img src="type.jpg" title="Keypad Mobile"><br/>
+             <p id="keypad">5000</p>
+              <input type="number" id="it11" max="5" min="0" placeholder="0">
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <img src="iphone.jpg" title="IPhone"><br/>
+              <p id="iphone">150000</p>
+              <input type="number" id="it12" max="5" min="0" placeholder="0">
+            </div>
+          </div>
+        </div>
+        
+        </body>
+        </html>
+        
