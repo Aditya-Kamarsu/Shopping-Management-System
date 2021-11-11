@@ -12,6 +12,10 @@ public class Login extends HttpServlet{
 		String name=req.getParameter("name");
 		String pass=req.getParameter("pass");
 			if(CustomerDao.login(name,pass)){
+				HttpSession ses=req.getSession(true);
+			   ses.setAttribute("name",name);
+			   ses.setAttribute("pass",pass);
+				pw.println("<script>alert('Login Successful');parent.window.location.href='UserDashBoard.html'</script>"); 
 				pw.println("<h3>Hello "+name+"</h3>");
 			RequestDispatcher rd=req.getRequestDispatcher("/UserDashBoard.html");
 			rd.include(req,res);

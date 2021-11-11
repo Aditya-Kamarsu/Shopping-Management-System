@@ -30,7 +30,7 @@
         </style>
     </head>
     <body>
-        <form id="cstform" name="uselog" action="LoginSer">
+        <form id="cstform" name="uselog" action="LoginSer" method="post">
             <table class="tab1">
                 <tr>
                     <td colspan="2">
@@ -75,8 +75,8 @@
                 }
                 else
                 {
-                    alert("Login successfull");
-                    parent.window.location.href="UserDashBoard.html";        //user dashboard here.
+                   // alert("Login successfull");
+                    document.forms.uselog.submit();        //user dashboard here.
                 }
             }
         </script>

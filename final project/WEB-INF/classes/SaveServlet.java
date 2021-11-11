@@ -16,12 +16,14 @@ public class SaveServlet extends HttpServlet{
 		c.setAddress(req.getParameter("address"));
 		try{
 		if(CustomerDao.save(c)){
-			pw.println("<p style='color:azure; font-size:30px;>Please login again!!</h1>");
-			RequestDispatcher rd=req.getRequestDispatcher("/usersign.html");
+			pw.println("<script>alert('Registration Successful');</script>");
+			pw.println("<h1 style='color:azure; font-size:30px;>Please login again!!</h1>");
+			pw.println("<h1 style='color:azure; font-size:30px;>Please login again!!</h1>");
+			RequestDispatcher rd=req.getRequestDispatcher("/main.html");
 			rd.include(req,res);
 		}else{
 			pw.println("Sorry!Unable to save record :(");
-			RequestDispatcher rd=req.getRequestDispatcher("/usersignup.html");
+			RequestDispatcher rd=req.getRequestDispatcher("/main.html");
 			rd.include(req,res);
 		}
 		}catch(Exception e){
