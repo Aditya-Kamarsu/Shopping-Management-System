@@ -1,0 +1,8 @@
+Item Id	  Item Name	      Item Quantity	      Each Price	    Total Price
+  101	    T-shirt 	      5	                    500             2500
+  105	    Men Slippers	  2	                    150             300
+  106	    Sun-Glasses	    5	                    400             2000
+  102   	Shoes         	2           	        1200            2400
+  104   	Watch         	2           	        2000            4000
+  --------------------------------------------------------
+  Total Bill :                                  11,200 Rs

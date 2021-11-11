@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove-User</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        input:focus{
+            background-color: rgb(200, 250, 250);
+        }
+
+        body
+        {
+            background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url(http://discovertemplate.com/wp-content/uploads/2020/12/DT_G71_Online-Shopping-Animated-GIF-Icon-pack-1.gif);
+        }
+    </style>
+</head>
+<body>
+    <center >
+        <div style="width: 700px; height: 500px; margin-top: 200px;padding-top: 100px; border: 2px solid black; background-color:  #ebf2ff;" id="img">
+            <span style="font-size: 50px; font-weight: bolder;">Remove User</span>
+
+            <br>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert" style="display: none; width: 75%;">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close" id="dismiss">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+            <br>
+            <form name="remform" method="get" action="deleteservlet">
+          <table>
+              
+            <tr>
+                <td><span style="color: black; font-weight: bold; font-size: 30px;">
+            Customer Id: </span> </td>
+            <td><input type="password" name="cid" id="cid" style="height: 30px; border: 2px solid black;"><br></td>
+           
+            <tr>
+            <td><span style="color: black; font-weight: bold; font-size: 30px;">
+               Conform the Customer Id: </span></td>
+               <td><input type="password" id="ccid" style="height: 30px; border: 2px solid black;">
+        </td>
+        </tr>
+        </table>
+        </form>
+        
+            <button class="btn btn-info" onclick="validate()">Submit</button>
+        </div>
+    </center>
+    <script>
+    function validate()
+    {
+      var c=3;
+      var cid=document.getElementById("cid").value;
+      var ccid=document.getElementById("ccid").value;
+     
+      if(!cid)
+      {
+          console.log("Hello");
+          document.getElementById("alert").style.display="block";
+        document.getElementById("alert").innerHTML="Customer Id cannot be Empty";
+         c--;
+      }
+      else if(!ccid)
+      {
+        document.getElementById("alert").style.display="block";
+        document.getElementById("alert").innerHTML="Conform Customer Id cannot be Empty";
+         c--;
+      }
+      else if(cid!=ccid)
+      {
+        document.getElementById("alert").style.display="block";
+        document.getElementById("alert").innerHTML="Customer id and Conform id are not matching";
+         c--;
+      }
+      if(c==3)
+          {                   
+    const swalWithBootstrapButtons = Swal.mixin({
+                    customClass: {
+                        confirmButton: 'btn btn-success',
+                        cancelButton: 'btn btn-danger'
+                    },
+                    buttonsStyling: false
+                    })
+
+                    swalWithBootstrapButtons.fire({
+                    title: 'Are you sure?',
+                    text: "Do you want to delete the customer with id :"+ cid,
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonText: 'Delete it!',
+                    cancelButtonText: 'Cancel!',
+                    reverseButtons: true
+                    }).then((result) => {
+                    if (result.isConfirmed) {
+                        
+                        swalWithBootstrapButtons.fire(
+                        'Deleted!',
+                        'Customer data has been deleted.',
+                        'success'
+                        );document.forms.remform.submit();
+                    } else if (
+                        result.dismiss === Swal.DismissReason.cancel
+                    ) {
+                        swalWithBootstrapButtons.fire(
+                        'Cancelled',
+                        'Your Customer data is safe :)',
+                        'error'
+                        )
+                    }
+                    });
+      }
+    }
+    </script>
+</body>
+</html>

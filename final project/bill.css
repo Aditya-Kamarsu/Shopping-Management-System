@@ -1,0 +1,84 @@
+body{
+   
+    background-image: linear-gradient(
+                    to right,
+                    #ff512f 0%,
+                    #dd2476 51%,
+                    #ff512f 100%
+                );
+                font-size: large;
+}
+h1{
+    font-size: 100px;
+    margin-left: 129px;
+}
+header{
+    background-color: #f5f5f5;
+    border: 10px solid black;
+    width: 50%;
+    height: 350px;
+    margin-left:30%;
+
+}
+#btns{
+    border:0px;
+    background-color:inherit;
+    display: block;
+    height: 78px;
+
+}
+.bt{
+    background-color: #ddd;
+    display: block;
+    font-size: large;
+    height: 53px;
+    text-align: center;
+    
+    margin: 30px;
+
+}
+
+button{
+    border:0px;
+    margin: 12px;
+    background-color: #ddd;
+    font-size: large;
+    font-weight: bold;
+    
+}
+#adc{
+    display: none;
+}
+#gpc{
+    display: none;
+}
+#pc{
+    display: none;
+}
+#payment{
+    display: none;
+}
+.lins{
+    display: none;
+}
+.lins button{
+    display: block;
+}
+.lins button:hover{background-color: #ddd;}
+.btn{
+    position: relative;
+}
+.btn:hover .lins{display: block;}
+#py{
+    margin-left: 50%;
+}
+div{
+    display: block;
+}
+#nav{
+    border: 1px;
+    border-radius: 1px;
+}
+#m1,#m2{
+    display: inline-block;
+}

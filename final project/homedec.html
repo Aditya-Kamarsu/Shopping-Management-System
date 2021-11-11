@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Decorations</title>
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        body {
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+    
+        .column {
+          float: left;
+          width: 16.666%;
+          height: auto;
+          padding: 0 10px;
+        }
+        
+        .row {margin: 0 -5px;}
+        
+        .row:after {
+          content: "";
+          display: block;
+          clear: both;
+        }
+    
+        @media screen and (max-width: 600px) {
+          .column {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 20px;
+          }
+        }
+        
+        /* Style the counter cards */
+        .card {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+          padding: 16px;
+          text-align: center;
+          background-color: #f1f1f1;
+          overflow: scroll;
+        }p::before{
+            content: "Price: ";
+        }
+        </style>
+        </head>
+        <body>
+        <div class="row">
+          <div class="column">
+            <div class="card">
+              <img src="curtains.jpg" title="Curtains"><br/>
+              <p id="curtain">250</p>
+              <input type="number" id="it13" max="5" min="0" placeholder="0">
+            </div>
+          </div>
+        
+          <div class="column">
+            <div class="card">
+                <img src="paintings.jpg" title="Paintings"><br/>
+               <p id="paint">3000</p>
+                <input type="number" id="it14" max="5" min="0" placeholder="0">
+            </div>
+          </div>
+          
+          <div class="column">
+            <div class="card">
+                <img src="flowerwas.jpg" title="FlowerVase"><br/>
+               <p id="flowerw">1500</p>
+                <input type="number" id="it15" max="5" min="0" placeholder="0">
+            </div>
+          </div>
+          
+          <div class="column">
+            <div class="card">
+              <img src="chandliers.jpg" title="Chandlier"><br/>
+            <p id="chand">10000</p>
+              <input type="number" id="it16" max="5" min="0" placeholder="0">
+            </div>
+          </div>
+
+          <div class="column">
+            <div class="card">
+              <img src="wallhanging.jpg" title="Wall Hangings"><br/>
+              <p id="wallhang">500</p>
+              <input type="number" id="it17" max="5" min="0" placeholder="0">
+            </div>
+          </div>
+
+          
+        </div>
+        
+        </body>
+        </html>
+        
