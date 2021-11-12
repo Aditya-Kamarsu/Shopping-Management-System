@@ -63,7 +63,7 @@ function gp(){
             confirmButtonText: 'Yes'
           }).then((result) => {
             if (result.isConfirmed) {
-                window.location.href="invoice.html";
+                window.location.href="inv";
             }
           })
       }
@@ -83,12 +83,12 @@ function pod(){
         confirmButtonText: 'Yes'
       }).then((result) => {
         if (result.isConfirmed) {
-            window.location.href="invoice.html";
+            window.location.href="inv";
         }
       })
 }
 function payd(){
-    location.href="invoice.html";
+    location.href="inv";
 }
 function mode(){
     document.getElementById("payment").style.display="block";

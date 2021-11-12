@@ -77,8 +77,34 @@ public class CustomerDao{
 			con.close();
 		}catch(Exception e){
 			System.out.println(e);
+		}
+		return c;
+	}
+
+	public static Customer getCustomerByNamePass(String name,String password){
+		Customer c=new Customer();
+		try{
+			Connection con=CustomerDao.getConnection();
+			PreparedStatement ps=con.prepareStatement("select * from Customers where name=? and password = ?");
+			ps.setString(1,name);
+			ps.setString(2,password);
+			ResultSet rs=ps.executeQuery();
+			if(rs.next()){
+				c.setId(rs.getInt(1));
+				c.setName(rs.getString(2));
+				c.setEmail(rs.getString(3));
+				c.setPass(rs.getString(4));
+				c.setContact(rs.getString(5));
+				c.setAddress(rs.getString(6));
+			}ps.close();
+			con.close();
+		}catch(Exception e){
+			System.out.println(e);
 		}return c;
-	}public static List<Customer> getAllCustomers(){
+	}
+
+
+	public static List<Customer> getAllCustomers(){
 		List<Customer> l=new ArrayList<Customer>();
 		try{
 			Connection con=CustomerDao.getConnection();
