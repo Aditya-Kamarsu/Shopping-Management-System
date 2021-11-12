@@ -76,7 +76,7 @@ public class FootwearCartServlet extends HttpServlet
 				CartDatabase.status(c);
 			}
 			pw.println("Items added successfully");
-			req.getRequestDispatcher("homedec.html").include(req,res);
+			req.getRequestDispatcher("footwear.html").include(req,res);
 		}
 		catch(Exception e)
 		{
