@@ -137,7 +137,7 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <li><a class="dropdown-item" href="UserDashBoard.html">Home</a></li>
-                <li><a class="dropdown-item" href="logoutservlet">Logout</a></li>
+                <li><a class="dropdown-item" href="Home-Page.html">Logout</a></li>
               </ul>
               
           </div>
@@ -165,7 +165,10 @@
 
     <div class="content" style="padding-top: 50px;padding-left: 108px;">
         <iframe class="frame" name="ff"></iframe>
+		<!--<form action="CartServlet" method="get">-->
         <button id="bt1" onclick="swealert()" >Move To Cart</button>
+		<!--<input type="submit" value="Move To Cart" onclick="swealert()"/>-->
+		<!--</form>-->
       </div>
       <script>
           function swealert(){
@@ -184,7 +187,7 @@
 });
           }
 function navigate(){
-  window.location.href="cart.html";
+  window.location.href="CartServlet";
 }
       </script>
 </body>

@@ -50,56 +50,58 @@
         </style>
         </head>
         <body>
-        <div class="row">
-          <div class="column">
-            <div class="card">
-              <img src="boy.jpg" title="kids"><br/>
-              <p id="boy">2500</p>
-              <input type="number" id="it1" max="5" min="0" placeholder="0">
-            </div>
-          </div>
-        
-          <div class="column">
-            <div class="card">
-                <img src="girl.jpg" title="kidsg"><br/>
-               <p id="girl">3000</p>
-                <input type="number" id="it2" max="5" min="0" placeholder="0">
-            </div>
-          </div>
-          
-          <div class="column">
-            <div class="card">
-                <img src="shirt.jpg" title="menshirt"><br/>
-               <p id="mens">1500</p>
-                <input type="number" id="it3" max="5" min="0" placeholder="0">
-            </div>
-          </div>
-          
-          <div class="column">
-            <div class="card">
-              <img src="trouser.jpg" title="menpant"><br/>
-             <p id="menp">1800</p>
-              <input type="number" id="it4" max="5" min="0" placeholder="0">
-            </div>
-          </div>
+		<form action="ClothCartServlet" method="get">
+			<div class="row">
+			  <div class="column">
+				<div class="card">
+				  <img src="boy.jpg" title="kids"><br/>
+				  <p id="boy">2500</p>
+				  <input type="number" name="kidswear-boy" id="it1" max="5" min="0" value="0" placeholder="0">
+				</div>
+			  </div>
+			
+			  <div class="column">
+				<div class="card">
+					<img src="girl.jpg" title="kidsg"><br/>
+				   <p id="girl">3000</p>
+					<input type="number" name="kidswear-girl" id="it2" max="5" min="0" value="0" placeholder="0">
+				</div>
+			  </div>
+			  
+			  <div class="column">
+				<div class="card">
+					<img src="shirt.jpg" title="menshirt"><br/>
+				   <p id="mens">1500</p>
+					<input type="number" name="menswear-shirt" id="it3" max="5" min="0" value="0" placeholder="0">
+				</div>
+			  </div>
+			  
+			  <div class="column">
+				<div class="card">
+				  <img src="trouser.jpg" title="menpant"><br/>
+				 <p id="menp">1800</p>
+				  <input type="number" name="menswear-pant" id="it4" max="5" min="0" value="0" placeholder="0">
+				</div>
+			  </div>
 
-          <div class="column">
-            <div class="card">
-              <img src="tradiwomen.jpg" title="women"><br/>
-             <p id="womentrad">10000</p>
-              <input type="number" id="it5" max="5" min="0" placeholder="0">
-            </div>
-          </div>
+			  <div class="column">
+				<div class="card">
+				  <img src="tradiwomen.jpg" title="women"><br/>
+				 <p id="womentrad">10000</p>
+				  <input type="number" id="it5" name="womenswear-traditional" max="5" min="0" value="0" placeholder="0">
+				</div>
+			  </div>
 
-          <div class="column">
-            <div class="card">
-              <img src="womenoffi.jpg" title="women office"><br/>
-             <p id="womenoff">8500</p>
-              <input type="number" id="it6" max="5" min="0" placeholder="0">
-            </div>
-          </div>
-        </div>
-        
+			  <div class="column">
+				<div class="card">
+				  <img src="womenoffi.jpg" title="women office"><br/>
+				 <p id="womenoff">8500</p>
+				  <input type="number" id="it6" name="womenswear-western" max="5" min="0" value="0" placeholder="0">
+				</div>
+			  </div>
+			</div>
+			<input type="submit" value="Add To Cart"/>
+		</form>
         </body>
-        </html>
+</html>
         
